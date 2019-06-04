@@ -224,6 +224,25 @@ $ journalctl -f -u kube-scheduler
 ```
 ## 8. 改造kubectl
 
+// 修改.kube/config
+
+```
+apiVersion: v1
+clusters:
+- cluster:
+    server: http://127.0.0.1:8080 # 此处IP修改为APIService监听的端口
+  name: kubernetes
+contexts:
+- context:
+    cluster: kubernetes
+    user: ""
+  name: kubernetes
+current-context: kubernetes
+kind: Config
+preferences: {}
+users: []
+```
+
 #### 8.1 准备证书
 ```bash
 #kubectl证书放在这，由于kubectl相当于系统管理员，我们使用admin命名
