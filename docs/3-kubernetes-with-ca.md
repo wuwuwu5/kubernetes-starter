@@ -408,6 +408,7 @@ $ service kubelet start
 
 #启动kubelet之后到master节点允许worker加入(批准worker的tls证书请求)
 #--------*在主节点执行*---------
+$ kubectl get csr # 获取集群信息
 $ kubectl get csr|grep 'Pending' | awk '{print $1}'| xargs kubectl certificate approve
 #-----------------------------
 
