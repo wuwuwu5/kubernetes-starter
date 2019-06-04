@@ -69,6 +69,7 @@ $ service etcd stop && rm -fr /var/lib/etcd/*
 $ cd ~/kubernetes-starter
 #按照配置文件的提示编辑好配置
 $ vi config.properties
+#需要将ETCD_ENDPOINTS改为https
 #生成配置
 $ ./gen-config.sh with-ca
 ```
